@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Student Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
   </head>
-  <body>
+  <body class="bg-dark">
     @include('navbar')
     <div class="col mt-3">
     @switch($layout)
         @case('index')
-            <div class="container-fluid">
-                <div class="row">
-                    <section class="col">
-                        @include("studentslist")
-                    </section>
-                </div>
-            </div>
+            @include('homepage')
             @break
         @case('create')
         <div class="card container" style="width: 18rem;">
@@ -71,7 +66,6 @@
                     <section class="col">
                         @include("studentslist")
                     </section>
-                    <section class="col"></section>
                 </div>
             </div>
             @break
